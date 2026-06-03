@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, User, Tag, ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 import { getBlogById } from '../lib/blogStore';
 
 export default function BlogDetail() {
@@ -25,8 +26,47 @@ export default function BlogDetail() {
     );
   }
 
+  const blogStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: blog.title,
+    description: blog.excerpt,
+    image: `https://alfacorporateandtaxconsultants.com.pk${blog.image}`,
+    author: {
+      '@type': 'Person',
+      name: blog.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ALFA Corporate & Tax Consultants',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://alfacorporateandtaxconsultants.com.pk/uploads/upload_1.jpg',
+      },
+    },
+    datePublished: blog.date,
+    dateModified: blog.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://alfacorporateandtaxconsultants.com.pk/blogs/${blog.id}`,
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title={`${blog.title} | ALFA Tax & Corporate Blog Pakistan`}
+        description={blog.excerpt}
+        keywords={`${blog.category.toLowerCase()} blog pakistan, ${blog.title.toLowerCase()}, tax blog lahore, corporate blog pakistan`}
+        canonical={`https://alfacorporateandtaxconsultants.com.pk/blogs/${blog.id}`}
+        structuredData={blogStructuredData}
+        breadcrumb={[
+          { name: 'Home', url: 'https://alfacorporateandtaxconsultants.com.pk/' },
+          { name: 'Blogs', url: 'https://alfacorporateandtaxconsultants.com.pk/blogs' },
+          { name: blog.title, url: `https://alfacorporateandtaxconsultants.com.pk/blogs/${blog.id}` },
+        ]}
+      />
+
       {/* Hero Image */}
       <div className="relative h-80 md:h-96">
         <img

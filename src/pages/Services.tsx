@@ -2,19 +2,47 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calculator, Building2, ArrowRight, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
+
+const servicesStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@type': 'Service',
+        name: 'Tax Services',
+        description: 'Income tax filing, GST registration, tax planning, and FBR compliance services in Lahore',
+        url: 'https://alfacorporateandtaxconsultants.com.pk/services/tax',
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@type': 'Service',
+        name: 'Corporate Services',
+        description: 'Company registration SECP, partnership registration, corporate compliance, and legal advisory in Lahore',
+        url: 'https://alfacorporateandtaxconsultants.com.pk/services/corporate',
+      },
+    },
+  ],
+};
 
 const servicesList = [
   {
     icon: Calculator,
     title: 'Tax Services',
-    description: 'Comprehensive tax solutions including income tax filing, GST registration, tax planning, and compliance management.',
+    description: 'Comprehensive tax solutions including income tax filing, GST registration, tax planning, and FBR compliance management for individuals and businesses in Lahore.',
     features: [
-      'Income Tax Return Filing',
-      'GST Registration & Returns',
+      'Income Tax Return Filing with FBR',
+      'GST Registration & Monthly Returns',
       'Tax Planning & Advisory',
       'Withholding Tax Compliance',
       'Tax Audit Representation',
-      'Sales Tax Matters',
+      'Sales Tax Matters & Refunds',
     ],
     link: '/services/tax',
     color: 'from-orange-500 to-red-500',
@@ -22,7 +50,7 @@ const servicesList = [
   {
     icon: Building2,
     title: 'Corporate Services',
-    description: 'End-to-end corporate solutions from company registration to ongoing compliance and legal advisory.',
+    description: 'End-to-end corporate solutions from SECP company registration to ongoing compliance and legal advisory for businesses in Pakistan.',
     features: [
       'Company Registration (SECP)',
       'Partnership Registration',
@@ -43,6 +71,18 @@ export default function Services() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Tax & Corporate Services Lahore | FBR Tax Filing & SECP Registration"
+        description="ALFA Consultants offers expert tax filing, GST registration, income tax returns, company registration SECP, and corporate legal services in Lahore, Pakistan. Call 0333-6479447."
+        keywords="tax services lahore, corporate services pakistan, FBR tax filing, SECP registration, GST registration, income tax filing, company registration, legal advisory lahore"
+        canonical="https://alfacorporateandtaxconsultants.com.pk/services"
+        structuredData={servicesStructuredData}
+        breadcrumb={[
+          { name: 'Home', url: 'https://alfacorporateandtaxconsultants.com.pk/' },
+          { name: 'Services', url: 'https://alfacorporateandtaxconsultants.com.pk/services' },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -52,9 +92,9 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Expertise</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Tax & Corporate Consultancy Services in Lahore</h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              We provide specialized tax and corporate consultancy services designed to help your business thrive while staying fully compliant.
+              We provide specialized tax filing and corporate consultancy services designed to help your business thrive while staying fully compliant with FBR and SECP regulations in Pakistan.
             </p>
           </motion.div>
         </div>
@@ -79,7 +119,7 @@ export default function Services() {
                     </div>
                     <h2 className="text-2xl font-bold text-secondary mb-4">{service.title}</h2>
                     <p className="text-gray-600 mb-6">{service.description}</p>
-                    
+
                     <ul className="space-y-3 mb-8">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-3 text-sm text-gray-700">

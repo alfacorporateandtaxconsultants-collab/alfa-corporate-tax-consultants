@@ -4,7 +4,30 @@ import {
   Phone, Mail, MapPin, Clock, Send, MessageSquare,
   CheckCircle, User, FileText, Inbox
 } from 'lucide-react';
+import SEO from '../components/SEO';
 import { addMessage, getMessages, type Message } from '../lib/messageStore';
+
+const contactStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact ALFA Tax Consultants Lahore',
+  description: 'Contact ALFA Corporate & Tax Consultants in Lahore for tax filing, GST registration, company registration, and corporate legal services. Call 0333-6479447.',
+  url: 'https://alfacorporateandtaxconsultants.com.pk/contact',
+  mainEntity: {
+    '@type': 'LegalService',
+    name: 'ALFA Corporate & Tax Consultants',
+    telephone: '+923336479447',
+    email: 'alfacorporateandtaxconsultants@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3-Fane Road, Office No 3, Ground Floor, Tehreem Building',
+      addressLocality: 'Lahore',
+      addressRegion: 'Punjab',
+      addressCountry: 'PK',
+    },
+    openingHours: 'Mo-Sa 09:00-18:00',
+  },
+};
 
 export default function Contact() {
   useEffect(() => {
@@ -37,6 +60,18 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact ALFA Tax Consultants Lahore | Free Tax Consultation"
+        description="Contact ALFA Corporate & Tax Consultants in Lahore. Free consultation for tax filing, GST registration, company registration SECP, and corporate legal services. Call 0333-6479447."
+        keywords="contact tax consultants lahore, tax consultation lahore, GST registration contact, company registration lahore contact, corporate legal advisory contact, FBR tax help lahore"
+        canonical="https://alfacorporateandtaxconsultants.com.pk/contact"
+        structuredData={contactStructuredData}
+        breadcrumb={[
+          { name: 'Home', url: 'https://alfacorporateandtaxconsultants.com.pk/' },
+          { name: 'Contact', url: 'https://alfacorporateandtaxconsultants.com.pk/contact' },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -46,9 +81,9 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Contact Tax Consultants in Lahore</h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Have questions or need assistance? Reach out to us and our team will get back to you promptly.
+              Have tax filing questions or need corporate legal assistance? Reach out to ALFA Consultants in Lahore and our team will get back to you promptly.
             </p>
           </motion.div>
         </div>
@@ -100,7 +135,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h2 className="text-2xl font-bold text-secondary">Send Us a Message</h2>
-                    <p className="text-gray-600 text-sm mt-1">Fill out the form below and we will respond shortly.</p>
+                    <p className="text-gray-600 text-sm mt-1">Fill out the form below for tax or corporate consultation.</p>
                   </div>
                   <button
                     onClick={loadMessages}
@@ -162,7 +197,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                        placeholder="How can we help?"
+                        placeholder="Tax Filing / Company Registration / GST"
                       />
                     </div>
                   </div>
@@ -174,7 +209,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-                      placeholder="Describe your query in detail..."
+                      placeholder="Describe your tax or corporate query in detail..."
                     />
                   </div>
                   <button
@@ -205,7 +240,7 @@ export default function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="ALFA Office Location"
+                  title="ALFA Tax Consultants Office Location Lahore"
                   className="grayscale-[30%]"
                 />
               </div>

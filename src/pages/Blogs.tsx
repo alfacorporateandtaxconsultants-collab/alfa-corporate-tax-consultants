@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight, Tag, Plus, Trash2, X } from 'lucide-react';
+import SEO from '../components/SEO';
 import { getBlogs, addBlog, deleteBlog, type BlogPost } from '../lib/blogStore';
 
 export default function Blogs() {
@@ -30,7 +31,7 @@ export default function Blogs() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newBlog = addBlog({
+    addBlog({
       ...formData,
       date: new Date().toISOString().split('T')[0],
       image: formData.image || '/blog1.jpg',
@@ -47,8 +48,36 @@ export default function Blogs() {
     }
   };
 
+  const blogListStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'ALFA Tax & Corporate Blog',
+    description: 'Latest insights on tax laws, corporate regulations, and business advisory in Pakistan',
+    url: 'https://alfacorporateandtaxconsultants.com.pk/blogs',
+    blogPost: blogs.slice(0, 3).map((blog) => ({
+      '@type': 'BlogPosting',
+      headline: blog.title,
+      description: blog.excerpt,
+      author: { '@type': 'Person', name: blog.author },
+      datePublished: blog.date,
+      url: `https://alfacorporateandtaxconsultants.com.pk/blogs/${blog.id}`,
+    })),
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Tax & Corporate Blog | FBR Tax Laws & SECP Regulations Pakistan"
+        description="Read our blog for latest insights on tax filing, GST registration, company registration SECP, FBR regulations, and corporate legal updates in Pakistan."
+        keywords="tax blog pakistan, FBR tax updates, GST registration guide, company registration blog, corporate law pakistan, tax filing tips, business advisory blog"
+        canonical="https://alfacorporateandtaxconsultants.com.pk/blogs"
+        structuredData={blogListStructuredData}
+        breadcrumb={[
+          { name: 'Home', url: 'https://alfacorporateandtaxconsultants.com.pk/' },
+          { name: 'Blogs', url: 'https://alfacorporateandtaxconsultants.com.pk/blogs' },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -58,9 +87,9 @@ export default function Blogs() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Insights</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Our Blog</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Tax & Corporate Blog Pakistan</h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Stay updated with the latest insights on tax laws, corporate regulations, and business advisory in Pakistan.
+              Stay updated with the latest insights on FBR tax laws, SECP corporate regulations, GST updates, and business advisory in Pakistan.
             </p>
           </motion.div>
         </div>
@@ -202,6 +231,7 @@ export default function Blogs() {
                       src={blog.image}
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
@@ -247,7 +277,7 @@ export default function Blogs() {
           {filteredBlogs.length === 0 && (
             <div className="text-center py-20">
               <Tag size={48} className="text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500 text-lg">No blogs found in this category.</p>
+              <p className="text-gray-500">No blogs found in this category.</p>
             </div>
           )}
         </div>

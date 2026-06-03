@@ -1,30 +1,31 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Building2, Landmark, FileText, Globe, Scale, BookOpen } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const links = [
   {
     category: 'Tax Authorities',
     icon: Landmark,
     items: [
-      { title: 'Federal Board of Revenue (FBR)', url: 'https://www.fbr.gov.pk', description: 'Official tax authority of Pakistan' },
-      { title: 'FBR IRIS Portal', url: 'https://iris.fbr.gov.pk', description: 'Online tax filing system' },
-      { title: 'FBR Tax Calculator', url: 'https://www.fbr.gov.pk/calculator', description: 'Calculate your tax liability' },
+      { title: 'Federal Board of Revenue (FBR)', url: 'https://www.fbr.gov.pk', description: 'Official tax authority of Pakistan for income tax and GST' },
+      { title: 'FBR IRIS Portal', url: 'https://iris.fbr.gov.pk', description: 'Online tax filing system for income tax returns' },
+      { title: 'FBR Tax Calculator', url: 'https://www.fbr.gov.pk/calculator', description: 'Calculate your tax liability online' },
     ],
   },
   {
     category: 'Corporate Registration',
     icon: Building2,
     items: [
-      { title: 'SECP eServices', url: 'https://eservices.secp.gov.pk', description: 'Company registration portal' },
-      { title: 'SECP Pakistan', url: 'https://www.secp.gov.pk', description: 'Securities and Exchange Commission' },
+      { title: 'SECP eServices', url: 'https://eservices.secp.gov.pk', description: 'Company registration portal for Pakistan' },
+      { title: 'SECP Pakistan', url: 'https://www.secp.gov.pk', description: 'Securities and Exchange Commission of Pakistan' },
     ],
   },
   {
     category: 'Legal Resources',
     icon: Scale,
     items: [
-      { title: 'Pakistan Code', url: 'https://pakistancode.gov.pk', description: 'Official laws and statutes' },
+      { title: 'Pakistan Code', url: 'https://pakistancode.gov.pk', description: 'Official laws and statutes of Pakistan' },
       { title: 'Supreme Court of Pakistan', url: 'https://www.supremecourt.gov.pk', description: 'Supreme Court official website' },
     ],
   },
@@ -32,25 +33,25 @@ const links = [
     category: 'Government Portals',
     icon: Globe,
     items: [
-      { title: 'Punjab Government', url: 'https://www.punjab.gov.pk', description: 'Punjab provincial government' },
-      { title: 'NADRA', url: 'https://www.nadra.gov.pk', description: 'National identity and registration' },
-      { title: 'EOBI', url: 'https://www.eobi.gov.pk', description: 'Employees Old-Age Benefits' },
+      { title: 'Punjab Government', url: 'https://www.punjab.gov.pk', description: 'Punjab provincial government portal' },
+      { title: 'NADRA', url: 'https://www.nadra.gov.pk', description: 'National identity and registration authority' },
+      { title: 'EOBI', url: 'https://www.eobi.gov.pk', description: 'Employees Old-Age Benefits Institution' },
     ],
   },
   {
     category: 'Useful Tools',
     icon: FileText,
     items: [
-      { title: 'NTN Verification', url: 'https://e.fbr.gov.pk', description: 'Verify NTN status online' },
-      { title: 'Active Taxpayer List', url: 'https://www.fbr.gov.pk/atp', description: 'Check active taxpayer status' },
+      { title: 'NTN Verification', url: 'https://e.fbr.gov.pk', description: 'Verify NTN status online with FBR' },
+      { title: 'Active Taxpayer List', url: 'https://www.fbr.gov.pk/atp', description: 'Check active taxpayer status with FBR' },
     ],
   },
   {
     category: 'Learning Resources',
     icon: BookOpen,
     items: [
-      { title: 'FBR Tax Education', url: 'https://www.fbr.gov.pk/tax-education', description: 'Tax education and guides' },
-      { title: 'SECP Guidelines', url: 'https://www.secp.gov.pk/guidelines', description: 'Corporate compliance guides' },
+      { title: 'FBR Tax Education', url: 'https://www.fbr.gov.pk/tax-education', description: 'Tax education and guides by FBR' },
+      { title: 'SECP Guidelines', url: 'https://www.secp.gov.pk/guidelines', description: 'Corporate compliance guides by SECP' },
     ],
   },
 ];
@@ -62,6 +63,17 @@ export default function ImportantLinks() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Important Links | FBR, SECP, NADRA & Legal Resources Pakistan"
+        description="Useful government links for tax and corporate services in Pakistan. FBR, SECP, NADRA, Punjab Government, and legal resources for tax filing and company registration."
+        keywords="FBR portal, SECP registration, NADRA Pakistan, tax resources, company registration links, legal resources pakistan, government portals"
+        canonical="https://alfacorporateandtaxconsultants.com.pk/links"
+        breadcrumb={[
+          { name: 'Home', url: 'https://alfacorporateandtaxconsultants.com.pk/' },
+          { name: 'Important Links', url: 'https://alfacorporateandtaxconsultants.com.pk/links' },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -71,9 +83,9 @@ export default function ImportantLinks() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Resources</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Important Links</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Important Government Links for Tax & Corporate Services</h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Useful links to government portals, tax authorities, and legal resources for your reference.
+              Useful links to FBR, SECP, NADRA, and other government portals for tax filing, company registration, and legal reference in Pakistan.
             </p>
           </motion.div>
         </div>
