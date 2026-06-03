@@ -365,7 +365,13 @@ export default function Home() {
       {/* Reviews Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-8">
+            <img
+              src="/reviews-img.jpg"
+              alt="Happy clients reviewing ALFA Tax Consultants"
+              className="w-full max-w-3xl mx-auto h-56 md:h-72 object-cover rounded-2xl shadow-lg mb-10"
+              loading="lazy"
+            />
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mt-3 mb-4">What Our Tax Clients Say</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
@@ -406,7 +412,13 @@ export default function Home() {
       {/* Location Section for Local SEO */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-12">
+          <AnimatedSection className="text-center mb-8">
+            <img
+              src="/office-img.jpg"
+              alt="ALFA Tax Consultants Office in Lahore"
+              className="w-full max-w-3xl mx-auto h-56 md:h-72 object-cover rounded-2xl shadow-lg mb-10"
+              loading="lazy"
+            />
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Visit Our Office</span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mt-3 mb-4">Tax Consultants in Lahore - Office Location</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -439,6 +451,12 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-r from-primary to-primary-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
+            <img
+              src="/cta-img.jpg"
+              alt="Get free tax consultation in Lahore"
+              className="w-full max-w-2xl mx-auto h-48 md:h-64 object-cover rounded-2xl shadow-xl mb-10"
+              loading="lazy"
+            />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to File Your Taxes or Register Your Company?
             </h2>
