@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E85D04;
+  --color-primary-light: #F48C06;
+  --color-primary-dark: #D00000;
+  --color-secondary: #1E293B;
+  --color-accent: #FFB703;
+  --color-whatsapp: #25D366;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 25s linear infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbit 35s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.orbit-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.orbit-ring {
+  position: absolute;
+  border: 1px solid rgba(232, 93, 4, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-ring-1 {
+  width: 200px;
+  height: 200px;
+}
+
+.orbit-ring-2 {
+  width: 320px;
+  height: 320px;
+}
+
+.orbit-ring-3 {
+  width: 440px;
+  height: 440px;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(232, 93, 4, 0.3);
+  top: 50%;
+  left: 50%;
+  margin-top: -24px;
+  margin-left: -24px;
+}
+
+.orbit-dot-inner {
+  animation: orbit-reverse 20s linear infinite;
+}
+
+.orbit-dot-inner-2 {
+  animation: orbit 25s linear infinite;
+}
+
+.orbit-dot-inner-3 {
+  animation: orbit-reverse 35s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E85D04;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D00000;
+}
