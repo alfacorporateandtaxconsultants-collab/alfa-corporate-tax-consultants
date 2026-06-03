@@ -90,6 +90,12 @@ export default function TaxServices() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <img
+              src="/tax-hero-img.jpg"
+              alt="Tax Filing and GST Registration Services Lahore"
+              className="w-full max-w-3xl mx-auto h-56 md:h-72 object-cover rounded-2xl shadow-lg mb-10"
+              loading="lazy"
+            />
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Specialized Service</span>
             <h1 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">Tax Filing & GST Registration Services in Lahore</h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
