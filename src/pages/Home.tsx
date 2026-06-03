@@ -256,7 +256,13 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-20 bg-white" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-8">
+            <img
+              src="/services-img.jpg"
+              alt="Tax and Corporate Services in Lahore"
+              className="w-full max-w-3xl mx-auto h-56 md:h-72 object-cover rounded-2xl shadow-lg mb-10"
+              loading="lazy"
+            />
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mt-3 mb-4">Tax & Corporate Services in Lahore</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -290,7 +296,13 @@ export default function Home() {
       {/* Why Trust Us */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-8">
+            <img
+              src="/trust-img.jpg"
+              alt="Why Clients Trust ALFA Tax Consultants"
+              className="w-full max-w-3xl mx-auto h-56 md:h-72 object-cover rounded-2xl shadow-lg mb-10"
+              loading="lazy"
+            />
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Promise</span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mt-3 mb-4">Why Clients Trust Our Tax Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -317,7 +329,13 @@ export default function Home() {
       {/* How We Work */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-8">
+            <img
+              src="/workflow-img.jpg"
+              alt="How ALFA Tax Consultancy Works"
+              className="w-full max-w-3xl mx-auto h-56 md:h-72 object-cover rounded-2xl shadow-lg mb-10"
+              loading="lazy"
+            />
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Process</span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mt-3 mb-4">How Our Tax Consultancy Works</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">

@@ -52,11 +52,11 @@ export default function OrbitHero() {
 
         {/* Center Logo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white shadow-2xl flex items-center justify-center animate-float">
+          <div className="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white shadow-2xl flex items-center justify-center animate-float">
             <img
               src="/uploads/upload_1.jpg"
               alt="ALFA Logo"
-              className="w-28 h-28 md:w-36 md:h-36 object-contain rounded-full"
+              className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain rounded-full"
             />
           </div>
         </div>
