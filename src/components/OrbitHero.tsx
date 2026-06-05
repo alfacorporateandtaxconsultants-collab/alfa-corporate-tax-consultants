@@ -40,10 +40,10 @@ export default function OrbitHero() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[500px] h-[500px] mx-auto" style={{ perspective: '1000px' }}>
+    <div className="relative w-full max-w-[500px] h-[500px] mx-auto pointer-events-none" style={{ perspective: '1000px' }}>
       <div
         ref={containerRef}
-        className="relative w-full h-full transition-transform duration-300 ease-out"
+        className="relative w-full h-full transition-transform duration-300 ease-out pointer-events-none"
       >
         {/* Orbit Rings */}
         <div className="orbit-ring orbit-ring-1 animate-orbit" />
