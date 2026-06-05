@@ -175,7 +175,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="text-center lg:text-left"
+              className="text-center lg:text-left relative z-10"
             >
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Award size={16} />
@@ -188,17 +188,17 @@ export default function Home() {
               <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
                 Looking for the best tax consultants in Lahore? ALFA Corporate & Tax Consultants provides expert income tax filing, GST registration, SECP company registration, and corporate legal advisory services across Pakistan. Led by Ghulam Akbar Khosa Advocate.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start relative z-20 pointer-events-auto">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/30"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/30 cursor-pointer"
                 >
                   Our Tax Services
                   <ArrowRight size={18} />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-secondary border-2 border-secondary/10 px-8 py-4 rounded-xl font-semibold hover:border-primary hover:text-primary transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-secondary border-2 border-secondary/10 px-8 py-4 rounded-xl font-semibold hover:border-primary hover:text-primary transition-colors cursor-pointer"
                 >
                   Free Consultation
                 </Link>
@@ -226,7 +226,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="flex justify-center items-center"
+              className="flex justify-center items-center pointer-events-none"
             >
               <OrbitHero />
             </motion.div>
